@@ -1,0 +1,134 @@
+* { /* Tasarımdaki tüm elementler için basit bir sıfırlama kod bloğu yazıyoruz. */
+    margin: 0; 
+    padding: 0;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+  
+  body {
+    background-color: #eef3f9; /* Arka plan rengimizi değiştiriyoruz */  
+    display: grid; /* Kapsayıcıyı kolayca ortalamak için Grid sistemini kullanıyoruz */
+    display: -ms-grid; /* Diğer Tarayıcılar İçin */
+    place-items: center; /* Kapsayıcıyı ekranın merkezine yerleştiriyoruz */
+    height: 100vh; /* Yüksekliğimizi tüm web sayfasını kapsayacak şekilde ayarlıyoruz */   
+  }
+  
+  .container {
+    display: -webkit-box; /* Diğer Tarayıcılar İçin */
+    display: -ms-flexbox; /* Diğer Tarayıcılar İçin */
+    display: flex; /* Kapsayıcı için Flexbox yapısını kullanıyoruz */
+    -webkit-box-orient: vertical; /* Diğer Tarayıcılar İçin */
+    -webkit-box-direction: normal; /* Diğer Tarayıcılar İçin */
+        -ms-flex-direction: column; /* Diğer Tarayıcılar İçin */
+            flex-direction: column; /* Flexbox yönümüzü sütun olarak belirliyoruz. Böylece elemanlar yukarıdan aşağı diziliyor. */
+    width: 525px; /* Kapsayıcımızın genişliğini ayarlıyoruz */
+    border-radius: 15px; /* Köşeleri yuvarlıyoruz */
+    -webkit-box-shadow: 0 10px 86px -20px #c8d5f1; /* Diğer Tarayıcılar İçin */
+            box-shadow: 0 10px 86px -20px #c8d5f1; /* Kasapyıcımıza gölge ekliyoruz */
+    overflow: hidden; /* Taşan kısımları temizliyoruz. Böylece köşelerin yuvarlak detayları kalacak */ 
+    font-family: 'Mulish', sans-serif; /* Yazı tipini değiştiriyoruz */
+  }
+
+  .container header { /* Başlığın kapsayıcı etiketi */
+    background-color: #20225e; /* Arka plan rengini değiştiriyoruz */
+    height: 110px; /* Yüksekliğimizi ayarlıyoruz */
+    display: -ms-grid; /* Diğer Tarayıcılar İçin */
+    display: grid; /* İçeriği kolayca ortalamak için Grid yapısını kullanıyoruz */ 
+    place-items: center; /* İçeriği ortalıyoruz */
+    position: relative; /* Kapatma ikonunun header içerisinde kalması için bu bölümü relative ayarlıyoruz */
+
+  }
+  
+  .container header h2 { /* Başlık */
+    color: #ffffff; /* Yazının Rengini Değiştiriyoruz */
+    font-size: 26px; /* Yazı boyutunu ayarlıyoruz */
+  }
+  
+  .container header span { /* Kapatma ikonu */
+    position: absolute; /* Kapsayıcı içerisindeki konumunu bağımsız olarak ayarlamak için absolute olarak kullanıyoruz */
+    right: 10px; /* Konumunu belirtiyoruz */
+    top: 10px; /* Konumunu belirtiyoruz */
+    color: #ffffff; /* Yazının Rengini Değiştiriyoruz */
+    background-color: #2f316e; /* Arka plan rengini değiştiriyoruz */
+    width: 36px; /* Genişliğini ayarlıyoruz */
+    height: 36px; /* Yüksekliğimizi ayarlıyoruz */
+    display: -ms-grid; /* Diğer Tarayıcılar İçin */
+    display: grid; /* İçeriği kolayca ortalamak için Grid yapısını kullanıyoruz */ 
+    place-items: center; /* İçeriği ortalıyoruz */
+    border-radius: 50%; /* Tam yuvarlak yapıyoruz */
+    font-size: 20px; /* Yazı boyutunu ayarlıyoruz */
+    cursor: pointer; /* Mouse imlecini el işareti yapıyoruz */
+  }
+
+  .container .body { /* İçerik kapsayıcısı */
+    display: -webkit-box; /* Diğer Tarayıcılar İçin */
+    display: -ms-flexbox; /* Diğer Tarayıcılar İçin */
+    display: flex; /* Kapsayıcı için Flexbox yapısını kullanıyoruz */
+    -webkit-box-orient: vertical; /* Diğer Tarayıcılar İçin */
+    -webkit-box-direction: normal; /* Diğer Tarayıcılar İçin */
+        -ms-flex-direction: column; /* Diğer Tarayıcılar İçin */
+        flex-direction: column; /* Flexbox yönümüzü sütun olarak belirliyoruz. Böylece elemanlar yukarıdan aşağı diziliyor. */
+    -webkit-box-align: center; /* Diğer Tarayıcılar İçin */
+        -ms-flex-align: center; /* Diğer Tarayıcılar İçin */
+            align-items: center; /* Elemanları ortalıyoruz */
+    -webkit-box-pack: justify; /* Diğer Tarayıcılar İçin */
+        -ms-flex-pack: justify; /* Diğer Tarayıcılar İçin */
+            justify-content: space-between; /* Elemanları her iki uca yaslı şekilde yayıyoruz */
+    -webkit-box-flex: 1; /* Diğer Tarayıcılar İçin */
+        -ms-flex: 1; /* Diğer Tarayıcılar İçin */
+            flex: 1; /* Bu bölümün kapsayıcı içerisindeki kalan alanı kaplaması için */
+    padding: 30px 50px; /* İç boşluğu ayarlıyoruz */
+    background-color: #ffffff; /* Arka plan rengini değiştiriyoruz */
+
+  }
+
+  .container .body .form-group { /* Form gruplandırma */
+    display: -webkit-box; /* Diğer Tarayıcılar İçin */
+    display: -ms-flexbox; /* Diğer Tarayıcılar İçin */
+    display: flex; /* Kapsayıcı için Flexbox yapısını kullanıyoruz */
+    -webkit-box-orient: vertical; /* Diğer Tarayıcılar İçin */
+    -webkit-box-direction: normal; /* Diğer Tarayıcılar İçin */
+        -ms-flex-direction: column; /* Diğer Tarayıcılar İçin */
+        flex-direction: column; /* Flexbox yönümüzü sütun olarak belirliyoruz. Böylece elemanlar yukarıdan aşağı diziliyor. */
+    margin-bottom: 40px; /* Alt taraftan boşluk veriyoruz */
+    width: 100%; /* Tüm satırı kapsamasını sağlıyoruz */
+  }
+
+  .container .body .form-group label { /* Label etiketleri */
+    color: #20225e;  /* Yazının Rengini Değiştiriyoruz */
+    font-weight: 700; /* Yazının kalınlığını değiştiriyoruz */
+    font-size: 18px; /* Yazı boyutunu ayarlıyoruz */
+  }
+  
+  .container .body .form-group input, .container .body .form-group select { /* Form elemanları */
+  border: none; /* Kenarlıkları kaldırıyoruz */
+  border-bottom: 1px solid #D3D5F1; /* Alt kenarlık ekliyoruz */
+  outline: none; /* Dış kenarlıkları kaldırıyoruz */
+  color: #20225e; /* Yazının Rengini Değiştiriyoruz */
+  font-size: 18px; /* Yazı boyutunu ayarlıyoruz */
+  font-weight: 400; /* Yazının kalınlığını değiştiriyoruz */
+  padding: 14px 0; /* İç boşluğu ayarlıyoruz */
+}
+
+.container .body .form-group select { /* Select elemanı */
+    -webkit-appearance: none; /* Diğer Tarayıcılar İçin */
+       -moz-appearance: none; /* Diğer Tarayıcılar İçin */
+            appearance: none; /* Mevcut ok işaretini kaldırıyoruz */
+    background-image: url(/images/arrow.svg); /* Yeni ok işaretini arka plan olarak ekliyoruz */
+    background-repeat: no-repeat; /* Arka plan görselinin tekrarını engelliyoruz */
+    background-position-x: 100%; /* Görselin konumunu ayarlıyoruz */
+    background-position-y: 50%; /* Görselin konumunu ayarlıyoruz */
+    cursor: pointer; /* Mouse imlecini el işareti yapıyoruz */
+  }
+
+  .container .body .form-submit button { /* Gönder butonu */
+    background-color: #20225e; /* Arka plan rengini değiştiriyoruz */
+    color: #fff; /* Yazının Rengini Değiştiriyoruz */
+    border: none; /* Kenarlıkları kaldırıyoruz */
+    border-radius: 40px; /* Kenarları yuvarlıyoruz */
+    -webkit-box-shadow: 0 20px 20px -16px rgba(2, 6, 127, 0.35); /* Diğer Tarayıcılar İçin */
+            box-shadow: 0 20px 20px -16px rgba(2, 6, 127, 0.35); /* Gölge ekliyoruz */
+    padding: 20px 60px; /* İç boşluğu ayarlıyoruz */
+    font-size: 18px; /* Yazı boyutunu ayarlıyoruz */
+    cursor: pointer; /* Mouse imlecini el işareti yapıyoruz */
+  }

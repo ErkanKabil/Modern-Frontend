@@ -1,0 +1,115 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
+
+* {
+  /* Tasarımdaki tüm elementler için basit bir sıfırlama kod bloğu yazıyoruz. */
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw; /* Genişliği tüm web sayfasını kapsayacak şekilde ayarlıyoruz */
+  height: 100vh; /* Yüksekliği tüm web sayfasını kapsayacak şekilde ayarlıyoruz */
+  display: grid; /* Kapsayıcıyı kolayca ortalamak için Grid sistemini kullanıyoruz */
+  display: -ms-grid; /* Diğer tarayıcılar için */
+  place-items: center; /* Kapsayıcıyı ekranın merkezine yerleştiriyoruz */
+  font-family: 'Roboto', sans-serif; /* Yazı tipini belirtiyoruz */
+  background-image: url("../assets/normal.jpg"); /* Varsayılan olarak bir arka plan görseli ekliyoruz. Bunu JavaScript ile değiştireceğiz */
+  backdrop-filter: blur(30px); /* Arka plan görselini blurlaştırmak için */
+  -webkit-backdrop-filter: blur(30px); /* Diğer tarayıcılar için */
+}
+
+body, .weatherAppWrapper { /* Kod tekrarı olmaması için ikisini de bir arada yazıyoruz */
+  background-repeat: no-repeat; /* Arka plan görselinin tekrar etmesini engelliyoruz */
+  background-size: cover; /* Arka plan görselini kalitesini bozmadan yayıyoruz */
+  background-position: center; /* Arka plan görselini ortalıyoruz */
+}
+
+.weatherAppWrapper {
+  width: 90%; /* Genişliğini ayarlıyoruz */
+  max-width: 1400px; /* Maksimum bir genişlik belirliyoruz ki büyük ekranlarda abartı bir genişliğe sahip olmasın */
+  height: 90vh; /* Yüksekliğini ayarlıyoruz */
+  padding: 40px 60px; /* İç boşluğunu ayarlıyoruz */
+  color: #ffffff; /* Yazının rengini değiştiriyoruz */
+  display: flex; /* Hizalamayı daha kolay yönetmek için flex sistemini kullanıyoruz */
+  display: -webkit-box; /* Diğer tarayıcılar için */
+  display: -ms-flexbox; /* Diğer tarayıcılar için */
+  flex-direction: column; /* Elementleri sütun şeklinde listeliyoruz */
+  -webkit-box-orient: vertical;/* Diğer tarayıcılar için */
+  -webkit-box-direction: normal; /* Diğer tarayıcılar için */
+  -ms-flex-direction: column; /* Diğer tarayıcılar için */
+  background-image: url("../assets/normal.jpg"); /* Varsayılan olarak bir arka plan görseli ekliyoruz. Bunu JavaScript ile değiştireceğiz */
+  border-radius: 10px; /* Köşeleri yuvarlıyoruz. */
+  position: relative; /* Relative yapıyoruz çünkü :after içerisinde absolute kullanacağız. Bu sayede :after'i bu kapsayıcı içerisinde tutacağız */
+  overflow: hidden; /* Taşmaları önlemek için */
+}
+
+.weatherAppWrapper * {
+  z-index: 5; /* Yazılar en üst katmanda olması için */
+  position: relative;
+}
+
+.weatherAppWrapper:after {
+  content: ""; /* Boş bırakıyoruz */
+  background-color: rgba(0, 0, 0, 0.5); /* Siyah bir arka plan rengi veriyoruz. Bunun opacity değerini .5 olarak veriyoruz */
+  width: 100%; /* Genişliği, kapsayıcının tamamını kapsayacak şekilde ayarlıyoruz */
+  height: 100%; /* Yüksekliği, kapsayıcının tamamını kapsayacak şekilde ayarlıyoruz */
+  position: absolute; /* Arka plana atmak için ve diğer elementlerden etkilenmemesi için */
+  top: 0; /* Konumu ayarlıyoruz */
+  left: 0; /* Konumu ayarlıyoruz */
+  right: 0; /* Konumu ayarlıyoruz */
+  bottom: 0; /* Konumu ayarlıyoruz */
+  z-index: 1; /* Orta katmanda tutuyoruz */
+}
+
+
+.title {
+  align-self: flex-end; /* En sağa hizalıyoruz */
+  -ms-flex-item-align: end; /* Diğer tarayıcılar için */
+  text-align: right; /* Yazıları sağa hizalıyoruz */
+}
+
+.title h2 {
+  font-size: 42px; /* Yazı boyutunu ayarlıyoruz */
+  font-weight: 500;
+}
+
+.title h2 span {
+  font-size: 82px; /* Yazı boyutunu ayarlıyoruz */
+  font-weight: 700; /* Yazı kalınlığını ayarlıyoruz */
+}
+
+.title h3 {
+  font-size: 22px; /* Yazı boyutunu ayarlıyoruz */
+  font-weight: 300; /* Yazı kalınlığını ayarlıyoruz */
+  margin-top: 10px; /* Üstten boşluk veriyoruz */
+}
+
+
+.weatherAppWrapper .temparatureWrapper {
+  margin-top: auto; /* En alta sabitlemek için */
+  display: flex; /* Elementleri daha kolay kontrol etmek için */
+  display: -webkit-box; /* Diğer tarayıcılar için */
+  display: -ms-flexbox; /* Diğer tarayıcılar için */
+  align-items: flex-end; /* Elementleri en alta hizalıyoruz */
+  -webkit-box-align: end; /* Diğer tarayıcılar için */
+  -ms-flex-align: end; /* Diğer tarayıcılar için */
+}
+
+.temparatureWrapper .degree span {
+  font-size: 142px; /* Yazı boyutunu ayarlıyoruz */
+  line-height: 71px; /* Diğer yazı ve ikon ile aynı hizaya getirmek için */
+}
+
+.temparatureWrapper .location {
+  font-size: 62px; /* Yazı boyutunu ayarlıyoruz */
+  margin-left: 10px; /* Soldan boşluk veriyoruz */
+}
+
+.temparatureWrapper .icon {
+  font-size: 62px; /* Yazı boyutunu ayarlıyoruz */
+  margin-left: 20px; /* Soldan boşluk veriyoruz */
+}
+/*# sourceMappingURL=main.css.map */

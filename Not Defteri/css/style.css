@@ -1,0 +1,115 @@
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  outline: none;
+  list-style: none;
+}
+
+body {
+  background-color: #eef3f9;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  font-family: 'Mulish', sans-serif;
+}
+
+.container { /* Kapsayıcı */
+  width: 600px; /* Kapsayıcımızın genişliğini ayarlıyoruz */
+  background-color: #fff; /* Arka plan rengini değiştiriyoruz */
+  border: 2px solid #e9dede; /* Kapsayıcıya bir kenarlık ekliyoruz */
+  border-radius: 15px; /* Köşeleri yuvarlıyoruz */
+  overflow: hidden; /* Taşan kısımları temizliyoruz. Böylece köşelerin yuvarlak detayları kalacak */ 
+  -webkit-box-shadow: 0px 0px 20px #2D383D; /* Diğer Tarayıcılar İçin */
+          box-shadow: 0px 0px 20px #2D383D; /* Kasapyıcımıza gölge ekliyoruz */
+  font-family: 'Mulish', sans-serif; /* Yazı tipini değiştiriyoruz */
+}
+
+.container header { /* Başlığın kapsayıcı etiketi */
+    display: -ms-grid; /* Diğer Tarayıcılar İçin */
+    display: grid; /* İçeriği kolayca ortalamak için Grid yapısını kullanıyoruz */ 
+    place-items: center; /* İçeriği ortalıyoruz */
+    height: 60px; /* Yüksekliğini ayarlıyoruz */
+    background-color: #713CEF; /* Arka plan rengini değiştiriyoruz */
+    color: #EBEBEB; /* Yazının Rengini Değiştiriyoruz */
+
+  }
+
+  .container .body {
+    padding: 20px 30px; /* İç boşluğu ayarlıyoruz */
+  }
+  
+  .container .body .to-do-input {
+    display: -webkit-box; /* Diğer Tarayıcılar İçin */
+    display: -ms-flexbox; /* Diğer Tarayıcılar İçin */
+    display: flex; /* Kapsayıcıyı flex yapısına getiriyoruz. Böylece input ve buton bitişik hale geliyor */
+    border: 2px solid #713CEF; /* Kenarlıkları şekillendiriyoruz */
+    border-radius: 4px; /* Köşeleri yuvarlıyoruz */
+  }
+  
+  .container .body .to-do-input input { /* Not Girişi */
+    -webkit-box-flex: 1; /* Diğer Tarayıcılar İçin */
+        -ms-flex: 1; /* Diğer Tarayıcılar İçin */
+            flex: 1; /* Satır içerisinde butondan kalan tüm alanı kapsaması için */
+    padding: 6px 8px; /* İç boşluğu ayarlıyoruz */
+    border: none; /* Kenarlıkları kaldırıyoruz */
+    font-size: 18px; /* Yazı boyutunu ayarlıyoruz */
+    color: #2D383D; /* Yazının Rengini Değiştiriyoruz */
+  }
+  
+
+  .container .body .to-do-input button { /* Not Ekleme Butonu */
+    border: none; /* Kenarlıkları kaldırıyoruz */
+    font-size: 32px; /* Yazı boyutunu ayarlıyoruz */
+    color: #fff; /* Yazının Rengini Değiştiriyoruz */
+    font-weight: 300; /* Yazının kalınlığını değiştiriyoruz */
+    width: 35px; /* Genişliğini ayarlıyoruz */
+    background-color: #713CEF; /* Arka plan rengini değiştiriyoruz */
+    cursor: pointer; /* Mouse imlecini el işareti yapıyoruz */
+  }
+  
+  .container .body .to-do-input button:hover { /* Butonun üzerine gelindiğinde* */
+    background-color: #7d4dec;  /* Arka plan rengini değiştiriyoruz */
+  }
+
+  .container .body .list ul { /* Listeleme */
+    max-height: 500px; /* Çok fazla not eklenmesi ihtimaline karşı maksimum bir yükseklik vererek yapımızı düzenli tutuyoruz */
+    overflow: auto; /* Taşmaları önlemek için */
+  }
+  
+  .container .body .list ul li { /* Liste elemanları */
+    display: -webkit-box; /* Diğer Tarayıcılar İçin */
+    display: -ms-flexbox; /* Diğer Tarayıcılar İçin */
+    display: flex; /* Not ve silme butonunun bitişik hale gelmes için */
+    margin-top: 1rem; /* Üst boşluk veriyoruz */
+    background-color: #efb03c; /* Arka plan rengini değiştiriyoruz */
+    border-radius: 4px; /* Köşeleri yuvarlıyoruz */
+    overflow: hidden; /* Taşan kısımları temizliyoruz. Böylece köşelerin yuvarlak detayları kalacak */ 
+  } 
+
+  .container .body .list ul li p { /* Not */
+    -webkit-box-flex: 1; /* Diğer Tarayıcılar İçin */
+        -ms-flex: 1; /* Diğer Tarayıcılar İçin */
+            flex: 1; /* Satır içerisinde butondan kalan tüm alanı kapsaması için */
+    font-size: 18px; /* Yazı boyutunu ayarlıyoruz */
+    color: #000; /* Yazının Rengini Değiştiriyoruz */
+    font-weight: 500; /* Yazının kalınlığını değiştiriyoruz */
+    padding: 8px; /* İç boşluğu ayarlıyoruz */
+  }
+  
+  .container .body .list ul li button { /* Silme Butonu */
+    background-color: #ef573c; /* Arka plan rengini değiştiriyoruz */
+    border: none; /* Kenarlıkları kaldırıyoruz */
+    color: #fff; /* Yazının Rengini Değiştiriyoruz */
+    width: 36px; /* Genişliğini ayarlıyoruz */
+    font-size: 32px; /* Yazı boyutunu ayarlıyoruz */
+    text-align: center; /* Yazıyı ortalıyoruz */
+    cursor: pointer; /* Mouse imlecini el işareti yapıyoruz */
+  }
+  
+  .container .body .list ul li button:hover { /* Butonun üzerine gelindiğinde* */
+    background-color: #e46048; /* Arka plan rengini değiştiriyoruz */
+  }

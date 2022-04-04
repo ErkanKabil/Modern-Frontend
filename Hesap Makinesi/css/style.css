@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;700&display=swap');
+
+* { /* Tasarımdaki tüm elementler için basit bir sıfırlama kod bloğu yazıyoruz. */
+    margin: 0; 
+    padding: 0;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+  
+  body {
+    background-color: #eef3f9; /* Arka plan rengini değiştiriyoruz */  
+    display: grid; /* Kapsayıcıyı kolayca ortalamak için Grid sistemini kullanıyoruz */
+    display: -ms-grid; /* Diğer Tarayıcılar İçin */
+    place-items: center; /* Kapsayıcıyı ekranın merkezine yerleştiriyoruz */
+    height: 100vh; /* Yüksekliğimizi tüm web sayfasını kapsayacak şekilde ayarlıyoruz */   
+  }
+  
+  .container { /* Kapsayıcı */
+    width: 500px; /* Genişliğini ayarlıyoruz */
+    -webkit-box-shadow: 0px 3px 13px 0px #333333; /* Diğer Tarayıcılar İçin */
+            box-shadow: 0px 3px 13px 0px #333333; /* Gölge ekliyoruz */
+    border-radius: 5px; /* Köşeleri yuvarlıyoruz */
+    color: #333; /* Yazının Rengini Değiştiriyoruz */
+    background-color: #fff; /* Arka plan rengini değiştiriyoruz */ 
+    font-family: 'Mulish', sans-serif; /* Yazı tipini değiştiriyoruz */
+  }
+
+  .container .screen { /* Ekran bölümü */
+    padding: .5rem 1rem; /* İç boşluğu ayarlıyoruz */
+    height: 20%; /* Yüksekliğini ayarlıyoruz */
+    display: -webkit-box; /* Diğer Tarayıcılar İçin */
+    display: -ms-flexbox; /* Diğer Tarayıcılar İçin */
+    display: flex; /* Kapsayıcı için Flexbox yapısını kullanıyoruz */
+    -webkit-box-orient: vertical; /* Diğer Tarayıcılar İçin */
+    -webkit-box-direction: normal; /* Diğer Tarayıcılar İçin */
+        -ms-flex-direction: column; /* Diğer Tarayıcılar İçin */
+        flex-direction: column; /* Flexbox yönümüzü sütun olarak belirliyoruz. Böylece elemanlar yukarıdan aşağı diziliyor. */
+    -webkit-box-align: end; /* Diğer Tarayıcılar İçin */
+        -ms-flex-align: end; /* Diğer Tarayıcılar İçin */
+            align-items: flex-end; /* Elemanları ekranın en sağına yaslıyoruz */
+    -webkit-box-shadow: 0px 3px 13px 0px rgba(51, 51, 51, 0.5); /* Diğer Tarayıcılar İçin */
+            box-shadow: 0px 3px 13px 0px rgba(51, 51, 51, 0.5); /* Gölge ekliyoruz */
+  }
+  .container .screen .problem { /* Problem bölümü */
+    -webkit-box-flex: 2; /* Diğer Tarayıcılar İçin */
+        -ms-flex: 2; /* Diğer Tarayıcılar İçin */
+            flex: 2; /* Kapsayıcının içinde bulunan diğer elemanlardan 2 kat daha fazla yer kaplaması için */
+    font-size: 32px; /* Yazı boyutunu ayarlıyoruz */
+  }
+  .container .screen .result { /* Sonuç bölümü */
+    -webkit-box-flex: 1; /* Diğer Tarayıcılar İçin */
+        -ms-flex: 1; /* Diğer Tarayıcılar İçin */
+            flex: 1; /* Problem alanından geriye kalan yeri kaplar */
+    font-size: 20px; /* Yazı boyutunu ayarlıyoruz */
+  }
+
+  .container .buttons {  /* Tuş kapsayıcısı */
+    display: -ms-grid; /* Diğer Tarayıcılar İçin */
+    display: grid; /* Tuşların dizilimini kolayca yapmak için Grid sistemini kullanıyoruz */
+    -ms-grid-columns: (1fr); /* Diğer Tarayıcılar İçin */
+        grid-template-columns: repeat(4, 1fr); /* 4 sütuna böldük ve her bir sütun eşit genişlikte */
+    -ms-grid-rows: (1fr); /* Diğer Tarayıcılar İçin */
+        grid-template-rows: repeat(5, 1fr); /* 5 satıra böldük ve her bir satır eşit yükseklikte */
+    grid-gap: .5rem; /* Parçalar arası boşluğu ayarladık */
+    padding: 1rem; /* İç boşluğu ayarlıyoruz */
+  }
+
+  .container .buttons span { /* Tuşlar */
+    cursor: pointer; /* Mouse imlecini el işareti yapıyoruz */
+    display: block; /* Block etiket yapıyoruz */
+    -webkit-box-shadow: 0px 3px 13px 0px rgba(51, 51, 51, 0.5); /* Diğer Tarayıcılar İçin */
+            box-shadow: 0px 3px 13px 0px rgba(51, 51, 51, 0.5); /* Gölge ekliyoruz */
+    padding: 1rem; /* İç boşluğu ayarlıyoruz */
+    text-align: center; /* Yazıları ortalıyoruz */
+    -webkit-transition: all .2s; /* Diğer Tarayıcılar İçin */
+    transition: all .2s; /* Hover efekti için bir animasyon ekliyoruz */
+    font-weight: 700; /* Yazının kalınlığını değiştiriyoruz */
+    font-size: 18px; /* Yazı boyutunu ayarlıyoruz */
+  }
+  
+  .container .buttons span:hover { /* Tuşların üzerine gelindiğindeki hali */
+    -webkit-box-shadow: 0px 3px 13px 0px #333333; /* Diğer Tarayıcılar İçin */
+            box-shadow: 0px 3px 13px 0px #333333; /* Gölgeyi değiştiriyoruz */
+  }
